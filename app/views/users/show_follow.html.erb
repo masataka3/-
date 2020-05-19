@@ -1,0 +1,17 @@
+
+
+<table class="table table-hover table-inverse">
+	<th>image</th>
+	<th>name</th>
+	<th></th>
+	<th colspan="4"></th>
+<tr>
+<% @users.each do |user| %>
+  <td> <%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg")%></td>
+  <td>  <%= user.name %> </td>
+  <td><%= link_to '詳細', user_path(user) %></td>
+</tr>
+<% end %>
+</table>
+
+
